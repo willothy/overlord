@@ -1,0 +1,33 @@
+[package]
+name = "rx-term"
+version = "0.1.0"
+default-run = "rx"
+
+[workspace.package]
+edition = "2021"
+authors = ["Will Hopkins <willothyh@gmail.com>"]
+description = "A modern terminal workspace and multiplexer"
+repository = "https://github.com/willothy/rx"
+license = "MIT"
+readme = "README.md"
+
+[[bin]]
+name = "rx-server"
+path = "server/main.rs"
+
+[[bin]]
+name = "rx"
+path = "client/main.rs"
+
+[dependencies]
+rx-shared = { path = "shared" }
+serde = { workspace = true }
+tokio = { workspace = true }
+
+[workspace]
+members = [".", "shared"]
+default-members = ["."]
+
+[workspace.dependencies]
+serde = { version = "1.0", features = ["derive"] }
+tokio = { version = "1.29.1", features = ["full"] }

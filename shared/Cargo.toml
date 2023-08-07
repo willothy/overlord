@@ -1,0 +1,7 @@
+[package]
+name = "rx-shared"
+version = "0.1.0"
+
+[dependencies]
+tokio = { workspace = true }
+serde = { workspace = true }
