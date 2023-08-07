@@ -1,0 +1,14 @@
+[package]
+name = "rx-server"
+version = "0.1.0"
+edition = "2021"
+
+[[bin]]
+name = "rx-server"
+path = "src/main.rs"
+
+[dependencies]
+serde = { workspace = true }
+tokio = { workspace = true }
+termwiz = { workspace = true }
+anyhow = { workspace = true }

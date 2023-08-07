@@ -1,0 +1,15 @@
+[package]
+name = "rx-client"
+version = "0.1.0"
+edition = "2021"
+default-run = "rx"
+
+[[bin]]
+name = "rx"
+path = "src/main.rs"
+
+[dependencies]
+serde = { workspace = true }
+tokio = { workspace = true }
+termwiz = { workspace = true }
+anyhow = { workspace = true }
