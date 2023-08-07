@@ -1,0 +1,70 @@
+syntax = "proto3";
+package rx.server;
+
+service ServerService {
+  rpc SendInputEvent(InputEvent) returns (InputEventResponse);
+
+  rpc StartSession(StartSessionRequest) returns (StartSessionResponse);
+  rpc AttachSession(AttachSessionRequest) returns (AttachSessionResponse);
+  rpc DetachSession(DetachSessionRequest) returns (DetachSessionResponse);
+  rpc KillSession(KillSessionRequest) returns (KillSessionResponse);
+  rpc ShutdownServer(ShutdownRequest) returns (ShutdownResponse);
+}
+
+message InputEventResponse {
+}
+
+message StartSessionRequest {
+}
+
+message StartSessionResponse {
+  uint64 id = 1;
+}
+
+message AttachSessionRequest {
+  uint64 id = 1;
+}
+
+message AttachSessionResponse {
+}
+
+message DetachSessionRequest {
+  uint64 id = 1;
+}
+
+message DetachSessionResponse {
+}
+
+message KillSessionRequest {
+  uint64 id = 1;
+}
+
+message KillSessionResponse {
+}
+
+message ShutdownRequest {
+}
+
+message ShutdownResponse {
+}
+
+message KeyEvent {
+  int64 key = 1;
+  int64 modifiers = 2;
+}
+
+message MouseEvent {
+  int64 x = 1;
+  int64 y = 2;
+  int64 button = 3;
+  int64 modifiers = 4;
+  bool release = 5;
+}
+
+message InputEvent {
+  oneof event {
+    KeyEvent key = 1;
+    MouseEvent click = 2;
+    MouseEvent move = 3;
+  }
+}

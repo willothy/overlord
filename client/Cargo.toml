@@ -13,3 +13,6 @@ serde = { workspace = true }
 tokio = { workspace = true }
 termwiz = { workspace = true }
 anyhow = { workspace = true }
+prost = { workspace = true }
+tonic = { workspace = true }
+rx-proto = { workspace = true }

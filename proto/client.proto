@@ -1,0 +1,32 @@
+syntax = "proto3";
+package rx.client;
+
+
+service ClientService {
+  /// The raw stdout of a subprocess.
+  rpc SendOutput(SubprocessStdout) returns (SendOutputResponse);
+
+  rpc SendUIEvent(UIEvent) returns (SendUIEventResponse);
+
+  rpc SendUserEvent(UserEvent) returns (SendUserEventResponse);
+}
+
+message SendOutputResponse {
+}
+
+message SubprocessStdout {
+  uint64 id = 1;
+  bytes data = 2;
+}
+
+message UIEvent {
+}
+
+message SendUIEventResponse {
+}
+
+message UserEvent {
+}
+
+message SendUserEventResponse {
+}
