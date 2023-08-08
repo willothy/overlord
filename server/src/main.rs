@@ -140,33 +140,25 @@ async fn main() -> Result<()> {
 
     let (tx, mut rx) = broadcast::channel(1);
 
-    tokio::task::spawn({
-        let tx = tx.clone();
-        let mut sigint = signal(SignalKind::interrupt())?;
-        let mut sigquit = signal(SignalKind::quit())?;
-
-        async move {
-            tokio::select! {
-                _ = sigint.recv() => {
-                    tx.send(()).ok();
-                },
-                _ = sigquit.recv() => {
-                    tx.send(()).ok();
-                }
-            }
-        }
-    });
-
     Server::builder()
         .add_service(ServerServiceServer::new(RxServer::new(tx)))
-        .serve_with_incoming_shutdown(stream, async move {
-            rx.recv().await.ok();
+        .serve_with_incoming_shutdown(stream, {
+            let mut sigint = signal(SignalKind::interrupt())?;
+            let mut sigquit = signal(SignalKind::quit())?;
+
+            async move {
+                tokio::select! {
+                    _ = sigint.recv() => (),
+                    _ = sigquit.recv() => (),
+                    _ = rx.recv() => (),
+                }
+            }
         })
         .await?;
 
     fs::remove_file(&sock_path).await?;
 
-    write!(std::io::stdout(), "\r\n").ok();
+    write!(std::io::stdout(), "\r").ok();
 
     Ok(())
 }
