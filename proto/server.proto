@@ -2,7 +2,7 @@ syntax = "proto3";
 package rx.server;
 
 service ServerService {
-  rpc SendInputEvent(InputEvent) returns (InputEventResponse);
+  rpc HandleInputEvent(InputEvent) returns (InputEventResponse);
 
   rpc StartSession(StartSessionRequest) returns (StartSessionResponse);
   rpc AttachSession(AttachSessionRequest) returns (AttachSessionResponse);

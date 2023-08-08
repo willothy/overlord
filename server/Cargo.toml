@@ -2,6 +2,7 @@
 name = "rx-server"
 version = "0.1.0"
 edition = "2021"
+default-run = "rx-server"
 
 [[bin]]
 name = "rx-server"
@@ -10,8 +11,12 @@ path = "src/main.rs"
 [dependencies]
 serde = { workspace = true }
 tokio = { workspace = true }
+tokio-stream = { workspace = true }
 termwiz = { workspace = true }
 anyhow = { workspace = true }
 prost = { workspace = true }
 tonic = { workspace = true }
 rx-proto = { workspace = true }
+dirs = { workspace = true }
+dashmap = { workspace = true }
+crossbeam-queue = { workspace = true }

@@ -8,15 +8,18 @@ readme = "README.md"
 
 [workspace]
 members = ["client", "server", "proto"]
-default-members = ["client"]
-build = "build.rs"
+default-members = ["client", "server"]
 
 [workspace.dependencies]
 termwiz = "0.20.0"
 serde = { version = "1.0", features = ["derive"] }
 tokio = { version = "1.29.1", features = ["full"] }
+tokio-stream = { version = "0.1.14", features = ["full"] }
 anyhow = "1.0.72"
 prost = "0.11.9"
 tonic = "0.9.2"
 tonic-build = { version = "0.9.2" }
 rx-proto = { path = "proto" }
+dirs = "5.0.1"
+dashmap = { version = "5.5.0", features = ["serde", "rayon"] }
+crossbeam-queue = "0.3.8"
