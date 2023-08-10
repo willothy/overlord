@@ -1,11 +1,11 @@
 [package]
-name = "rx-client"
+name = "overlord-client"
 version = "0.1.0"
 edition = "2021"
-default-run = "rx"
+default-run = "over"
 
 [[bin]]
-name = "rx"
+name = "over"
 path = "src/main.rs"
 
 [dependencies]

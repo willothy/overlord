@@ -1,11 +1,11 @@
 [package]
-name = "rx-server"
+name = "overlord-server"
 version = "0.1.0"
 edition = "2021"
 default-run = "rx-server"
 
 [[bin]]
-name = "rx-server"
+name = "overlord"
 path = "src/main.rs"
 
 [dependencies]
