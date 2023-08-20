@@ -2,7 +2,7 @@
 edition = "2021"
 authors = ["Will Hopkins <willothyh@gmail.com>"]
 description = "A modern terminal workspace and multiplexer"
-repository = "https://github.com/willothy/rx"
+repository = "https://github.com/willothy/overlord"
 license = "MIT"
 readme = "README.md"
 
@@ -19,7 +19,7 @@ anyhow = "1.0.72"
 prost = "0.11.9"
 tonic = "0.9.2"
 tonic-build = { version = "0.9.2" }
-rx-proto = { path = "proto" }
 dirs = "5.0.1"
 dashmap = { version = "5.5.0", features = ["serde", "rayon"] }
 crossbeam-queue = "0.3.8"
+overlord-proto = { path = "proto" }

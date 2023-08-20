@@ -1,6 +1,5 @@
 use anyhow::Result;
 
-use rx_proto as proto;
 pub mod terminal;
 
 #[tokio::main]

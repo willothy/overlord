@@ -9,6 +9,7 @@ name = "over"
 path = "src/main.rs"
 
 [dependencies]
+overlord-proto = { workspace = true }
 serde = { workspace = true }
 tokio = { workspace = true }
 tokio-stream = { workspace = true }
@@ -16,7 +17,6 @@ termwiz = { workspace = true }
 anyhow = { workspace = true }
 prost = { workspace = true }
 tonic = { workspace = true }
-rx-proto = { workspace = true }
 dirs = { workspace = true }
 dashmap = { workspace = true }
 crossbeam-queue = { workspace = true }

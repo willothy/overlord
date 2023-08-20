@@ -10,7 +10,7 @@ use proto::server::{
     InputEvent, InputEventResponse, KillSessionRequest, KillSessionResponse, ShutdownRequest,
     ShutdownResponse, StartSessionRequest, StartSessionResponse,
 };
-use rx_proto as proto;
+use overlord_proto as proto;
 
 use tokio::{
     fs,
